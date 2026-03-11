@@ -1,9 +1,10 @@
 package br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento;
-import src.main.java.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
+import br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
 
-public class Main {
+public class BSTmain {
     public static void main(String[] args) {
         ArvoreBinariaSemBalanceamento arvore = new ArvoreBinariaSemBalanceamento();
+
 
         System.out.println("-- Inserindo elementos --");
         int[] valores =  {34, 55, 5, 1, 17, 90, 75, 26, 13, 40, 43, 80};
