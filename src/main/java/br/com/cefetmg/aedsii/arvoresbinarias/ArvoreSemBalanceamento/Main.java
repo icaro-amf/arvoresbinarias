@@ -1,5 +1,5 @@
 package br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento;
-import src.main.java.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
+import br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
 
 public class Main {
     public static void main(String[] args) {
