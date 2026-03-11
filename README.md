@@ -1,10 +1,1 @@
-#🌳 Árvores Binárias de Pesquisa — BST & AVL
-
-1ª Avaliação Prática — Algoritmos e Estruturas de Dados II
-Centro Federal de Educação Tecnológica de Minas Gerais — CEFET-MG
-Prof. Thiago de Souza Rodrigues · Entrega: 17/03/2026
-
-Integrantes:
-
-Ícaro A. Mota Fonseca
-André Botelho
+# arvoresbinarias
