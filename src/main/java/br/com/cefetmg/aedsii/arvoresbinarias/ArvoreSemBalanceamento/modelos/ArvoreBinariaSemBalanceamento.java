@@ -1,4 +1,4 @@
-package src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos;
+package src.main.java.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos;
 
 public class ArvoreBinariaSemBalanceamento {
     private static class No {

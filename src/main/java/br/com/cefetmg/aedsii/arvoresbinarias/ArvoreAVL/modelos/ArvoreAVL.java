@@ -1,4 +1,4 @@
-package src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreAVL.modelos;
+package src.main.java.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreAVL.modelos;
 
 public class ArvoreAVL {
     private static class No {
