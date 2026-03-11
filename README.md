@@ -1,4 +1,4 @@
-# 🌳 Árvores Binárias de Pesquisa — BST & AVL
+# 🌳 Árvores Binárias de Pesquisa — Sem Balanceamento & AVL
 
 > **1ª Avaliação Prática — Algoritmos e Estruturas de Dados II**  
 > Centro Federal de Educação Tecnológica de Minas Gerais — CEFET-MG  
@@ -6,7 +6,7 @@
 
 **Integrantes:**
 - Ícaro A. Mota Fonseca
-- André Botelho
+- André J. Espíndola Botelho
 
 ---
 
@@ -14,8 +14,8 @@
 
 Implementação e comparação experimental de duas estruturas de dados hierárquicas:
 
-- **BST** — Árvore Binária de Pesquisa Sem Balanceamento
-- **AVL** — Árvore Binária de Pesquisa Com Balanceamento (Adelson-Velsky e Landis, 1962)
+- **`ArvoreSemBalanceamento`** — Árvore Binária de Pesquisa Sem Balanceamento
+- **`ArvoreAVL`** — Árvore Binária de Pesquisa Com Balanceamento (Adelson-Velsky e Landis, 1962)
 
 Ambas armazenam exclusivamente **elementos inteiros** e expõem os métodos de **inserção** e **busca**.  
 O objetivo central é comparar o número de comparações realizadas durante a busca em função do tamanho e da ordem de inserção dos elementos.
@@ -27,14 +27,14 @@ O objetivo central é comparar o número de comparações realizadas durante a b
 ```
 .
 ├── src/
-│   ├── ArvoreBinaria.java   # BST — inserção e busca
-│   ├── ArvoreAVL.java       # AVL — inserção, rotações e busca
-│   └── Experimentos.java    # Geração das árvores e coleta de comparações
+│   ├── ArvoreSemBalanceamento.java   # Árvore binária sem balanceamento — inserção e busca
+│   ├── ArvoreAVL.java                # Árvore AVL — inserção, rotações e busca
+│   └── Experimentos.java             # Geração das árvores e coleta de comparações
 ├── resultados/
-│   ├── tabela_bst.csv       # Comparações da BST (ordenado e aleatório)
-│   ├── tabela_avl.csv       # Comparações da AVL (ordenado e aleatório)
-│   ├── grafico_bst.png      # Gráfico n × comparações — BST ordenada
-│   └── grafico_avl.png      # Gráfico n × comparações — AVL ordenada
+│   ├── tabela_sem_balanceamento.csv  # Comparações da árvore sem balanceamento (ordenado e aleatório)
+│   ├── tabela_avl.csv                # Comparações da AVL (ordenado e aleatório)
+│   ├── grafico_sem_balanceamento.png # Gráfico n × comparações — sem balanceamento ordenada
+│   └── grafico_avl.png               # Gráfico n × comparações — AVL ordenada
 ├── relatorio/
 │   └── relatorio.pdf        # Relatório final entregue no Moodle
 └── README.md
@@ -54,7 +54,7 @@ javac src/*.java -d out/
 java -cp out/ Experimentos
 
 # Executar as demonstrações das árvores individualmente
-java -cp out/ ArvoreBinaria
+java -cp out/ ArvoreSemBalanceamento
 java -cp out/ ArvoreAVL
 ```
 
@@ -67,15 +67,15 @@ java -cp out/ ArvoreAVL
 Ambas as árvores usam uma **classe interna estática `No`** com o campo `reg` (valor inteiro) e referências `esq` e `dir`. A AVL acrescenta o campo `altura` para o cálculo do Fator de Balanceamento.
 
 ```
-No (BST)          No (AVL)
-─────────         ──────────
-reg: int          reg: int
-esq: No           esq: No
-dir: No           dir: No
-                  altura: int
+No (SemBalanceamento)   No (AVL)
+─────────────────────   ──────────
+reg: int                reg: int
+esq: No                 esq: No
+dir: No                 dir: No
+                        altura: int
 ```
 
-### 1. BST — `ArvoreBinaria.java`
+### 1. Sem Balanceamento — `ArvoreSemBalanceamento.java`
 
 Implementação recursiva seguindo o padrão dos slides do professor:
 
@@ -157,7 +157,7 @@ private No insere(int reg, No p) {
 
 ### Metodologia
 
-Para cada estrutura (BST e AVL) foram realizados dois conjuntos de experimentos:
+Para cada estrutura (`ArvoreSemBalanceamento` e `ArvoreAVL`) foram realizados dois conjuntos de experimentos:
 
 | Conjunto | Entrada | Tamanhos (n) |
 |----------|---------|--------------|
@@ -174,7 +174,7 @@ Como 100.001 é maior que todos os elementos inseridos, a busca percorre o **cam
 
 ### Resultados Esperados
 
-#### BST — Inserção Ordenada (pior caso)
+#### ArvoreSemBalanceamento — Inserção Ordenada (pior caso)
 
 Quando os elementos são inseridos em ordem crescente, a BST degenera em uma **lista encadeada**. A busca percorre todos os nós.
 
@@ -193,7 +193,7 @@ Quando os elementos são inseridos em ordem crescente, a BST degenera em uma **l
 
 > **Complexidade:** O(n) — crescimento **linear**
 
-#### BST — Inserção Aleatória (caso médio)
+#### ArvoreSemBalanceamento — Inserção Aleatória (caso médio)
 
 | n | Comparações (aproximadas) |
 |---|---------------------------|
@@ -236,7 +236,7 @@ O balanceamento garante altura máxima ≤ 1,44 · log₂(n) em qualquer cenári
 ```
 Comparações × n  (inserção ordenada)
 
-100.000 ┤                                              ╭── BST Ordenada
+100.000 ┤                                              ╭── SemBalanceamento Ordenada
  90.000 ┤                                         ╭───╯
  80.000 ┤                                    ╭────╯
  70.000 ┤                               ╭────╯
@@ -253,17 +253,17 @@ Comparações × n  (inserção ordenada)
 
 | Estrutura | Inserção Ordenada | Inserção Aleatória |
 |-----------|-------------------|--------------------|
-| BST | **O(n)** — degenerada | O(log n) — caso médio |
-| AVL | **O(log n)** — sempre | O(log n) — sempre |
+| ArvoreSemBalanceamento | **O(n)** — degenerada | O(log n) — caso médio |
+| ArvoreAVL | **O(log n)** — sempre | O(log n) — sempre |
 
-> A AVL garante O(log n) em **qualquer** cenário graças às rotações de rebalanceamento,  
-> enquanto a BST sem balanceamento pode degradar para O(n) com entradas ordenadas.
+> A `ArvoreAVL` garante O(log n) em **qualquer** cenário graças às rotações de rebalanceamento,  
+> enquanto a `ArvoreSemBalanceamento` pode degradar para O(n) com entradas ordenadas.
 
 ---
 
 ## 📚 Conceitos-chave
 
-### Propriedade BST
+### Propriedade da Árvore Sem Balanceamento
 Para todo nó `v`: todos os valores na subárvore esquerda são **menores** que `v.reg`, e todos na direita são **maiores**.
 
 ### Propriedade AVL
