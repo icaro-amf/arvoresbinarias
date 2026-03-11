@@ -1,5 +1,5 @@
-package ArvoreSemBalanceamento;
-import ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
+package src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento;
+import src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreSemBalanceamento.modelos.ArvoreBinariaSemBalanceamento;
 
 public class Main {
     public static void main(String[] args) {

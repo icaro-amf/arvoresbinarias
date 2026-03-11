@@ -1,6 +1,6 @@
-package ArvoreAVL;
+package src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreAVL;
 
-import ArvoreAVL.modelos.ArvoreAVL;
+import src.br.com.cefetmg.aedsii.arvoresbinarias.ArvoreAVL.modelos.ArvoreAVL;
 
 public class Main { public static void main(String[] args) {
         System.out.println("=== Arvore AVL — CEFET-MG ===\n");
