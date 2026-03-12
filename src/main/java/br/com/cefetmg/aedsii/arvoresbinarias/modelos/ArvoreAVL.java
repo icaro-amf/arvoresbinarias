@@ -1,6 +1,4 @@
-package br.com.cefetmg.aedsii.arvoresbinarias.ArvoreAVL.modelos;
-
-import br.com.cefetmg.aedsii.arvoresbinarias.modelos.ArvoreBinaria;
+package br.com.cefetmg.aedsii.arvoresbinarias.modelos;
 
 public class ArvoreAVL extends ArvoreBinaria {
 

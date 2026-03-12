@@ -1,6 +1,7 @@
 package br.com.cefetmg.aedsii.arvoresbinarias.modelos;
 
 public abstract class ArvoreBinaria {
+    protected int comparacoes;
 
     protected static class No {
         public int reg;
@@ -20,20 +21,29 @@ public abstract class ArvoreBinaria {
         this.raiz = null;
     }
 
+    public int pesquisaComContagem(int reg) {
+        comparacoes = 0;
+        pesquisa(reg, this.raiz);
+        return comparacoes;
+    }
+
+
     // ── Pesquisa ──────────────────────────────────────────────
     public Integer pesquisa(int reg) {
         return pesquisa(reg, this.raiz);
     }
 
     private Integer pesquisa(int reg, No p) {
-        if (p == null)
-            return null;
-        else if (Integer.compare(reg, p.reg) < 0)
-            return pesquisa(reg, p.esq);
-        else if (Integer.compare(reg, p.reg) > 0)
-            return pesquisa(reg, p.dir);
-        else
-            return p.reg;
+        while (p != null) {
+            comparacoes++;
+            if (Integer.compare(reg, p.reg) < 0)
+                p = p.esq;
+            else if (Integer.compare(reg, p.reg) > 0)
+                p = p.dir;
+            else
+                return p.reg;
+        }
+        return null;
     }
 
     // ── Inserção (cada filha define seu comportamento) ────────
