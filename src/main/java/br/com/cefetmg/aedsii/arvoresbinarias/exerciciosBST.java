@@ -11,18 +11,19 @@ public class exerciciosBST {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        for (int n = 10000; n <= 100000; n += 10000) {
+        for (int n = 10000; n <= 100000; n += 10000) { //faz a escolha do ultimo reg da arvore,
+            // por iterarar de 1 em 1, representa tmbqnt de elementos
 
             ArvoreSemBalanceamento arvore = new ArvoreSemBalanceamento();
 
             long inicio = System.currentTimeMillis();
 
             for (int i = 1; i <= n; i++)
-                arvore.insere(i);
+                arvore.insere(i); //insere termo a termo na arvore de forma ordenada, de 1 ate n.
 
             long fim = System.currentTimeMillis();
 
-            int comp = arvore.pesquisaComContagem(100001);
+            int comp = arvore.pesquisaComContagem(100001); //comp recebe o parametro 100001 para buscar em cada arvore
 
             dataset.addValue(comp, "Comparações", String.valueOf(n));
 

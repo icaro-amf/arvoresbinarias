@@ -2,9 +2,10 @@ package br.com.cefetmg.aedsii.arvoresbinarias.modelos;
 
 public abstract class ArvoreBinaria {
     protected int comparacoes;
+    protected No raiz;
 
     protected static class No {
-        public int reg;
+        public int reg; //representa o valor a ser inserido na arvore, antigo Item reg; no livro.
         public No  esq;
         public No  dir;
 
@@ -13,27 +14,28 @@ public abstract class ArvoreBinaria {
             this.esq = null;
             this.dir = null;
         }
-    }
 
-    protected No raiz;
+    }
 
     public ArvoreBinaria() {
         this.raiz = null;
     }
 
-    public int pesquisaComContagem(int reg) {
+    public int pesquisaComContagem(int reg) { //implementacao para retornar quantas comparacoes foram feitas para achar determinado valor.
         comparacoes = 0;
         pesquisa(reg, this.raiz);
         return comparacoes;
     }
 
 
-    // ── Pesquisa ──────────────────────────────────────────────
     public Integer pesquisa(int reg) {
-        return pesquisa(reg, this.raiz);
+        return pesquisa(reg, this.raiz); //realiza a pesquisa utilizando o valor a ser inserido e a raiz da arvore.
     }
 
-    private Integer pesquisa(int reg, No p) {
+    /*     No metodo de pesquisa com reg e No tiveram alteracoes para que nao estourasse o limite de recursao do java.
+           Ao pesquisar, aprendi que o Java possui uma limitacao natural de chamadas recursivas inferior a 20.000 chamadas,
+     por isso decidi fazer por iteracao*/
+    private Integer pesquisa(int reg, No p) { //metodo de pesquisa completo.
         while (p != null) {
             comparacoes++;
             if (Integer.compare(reg, p.reg) < 0)
@@ -46,14 +48,14 @@ public abstract class ArvoreBinaria {
         return null;
     }
 
-    // ── Inserção (cada filha define seu comportamento) ────────
     public void insere(int reg) {
-        this.raiz = insere(reg, this.raiz);
+        this.raiz = insere(reg, this.raiz);//realiza a insercao utilizando o valor a ser inserido e a raiz da arvore.
     }
 
+     /*Metodo insere a ser subescrito em suas classes filhas
+     por ser muito especifico em cada caso, Sem Balanciameto e na AVL*/
     protected abstract No insere(int reg, No p);
 
-    // ── Travessias ────────────────────────────────────────────
     public void emOrdem() {
         System.out.print("Em-Ordem: ");
         emOrdem(this.raiz);
