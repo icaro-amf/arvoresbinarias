@@ -6,7 +6,7 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class exerciciosBST {
+public class Exercicio311 {
     public static void main(String[] args) {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
