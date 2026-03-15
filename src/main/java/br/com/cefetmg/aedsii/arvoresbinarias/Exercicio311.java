@@ -33,7 +33,7 @@ public class Exercicio311 {
         }
 
         JFreeChart chart = ChartFactory.createLineChart(
-                "Comparações na BST",
+                "Comparações na Sem Balanceamento (Ordenada)",
                 "Número de elementos",
                 "Comparações",
                 dataset

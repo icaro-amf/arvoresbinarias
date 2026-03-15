@@ -42,7 +42,7 @@ public class Exercicio312 {
         }
 
         JFreeChart chart = ChartFactory.createLineChart(
-                "Comparações na BST (Aleatório)",
+                "Comparações Sem Balanceamento (Aleatório)",
                 "Número de elementos",
                 "Comparações",
                 dataset
