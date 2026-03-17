@@ -26,9 +26,7 @@ public class Exercicio321 {
 
             dataset.addValue(comp, "Comparações", String.valueOf(n));
 
-            System.out.println("Elementos inseridos = " + n +
-                    " | Comparações: " + comp +
-                    " | Tempo: " + (fim - inicio) / 1000.0 + "s");
+            System.out.println("Elementos inseridos = " + n + " | Comparações: " + comp + " | Tempo: " + (fim - inicio) / 1000.0 + "s");
         }
 
         JFreeChart chart = ChartFactory.createLineChart(
