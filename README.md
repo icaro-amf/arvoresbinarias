@@ -36,10 +36,8 @@ arvoresbinarias/
 │               │   └── ArvoreAVL.java               # Inserção recursiva com rotações AVL
 │               ├── Exercicio311.java                # BST ordenada — gráfico
 │               ├── Exercicio312.java                # BST aleatória — gráfico
-│               ├── Exercicio313.java                # BST ordenada vs aleatória — gráfico único
 │               ├── Exercicio321.java                # AVL ordenada — gráfico
 │               ├── Exercicio322.java                # AVL aleatória — gráfico
-│               └── Exercicio323.java                # AVL ordenada vs aleatória — gráfico único
 ├── relatorio/
 │   └── relatorio.pdf                               # Relatório entregue no Moodle
 ├── pom.xml
